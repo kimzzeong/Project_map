@@ -3,9 +3,9 @@ package com.example.wemap;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
@@ -27,15 +27,16 @@ public class MainActivity extends AppCompatActivity {
 
     private FusedLocationProviderClient client;
     SupportMapFragment mapFragment;
-    FloatingActionButton my_location_btn;
+    FloatingActionButton my_location_btn, camera_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //getSupportActionBar().hide();
 
         my_location_btn = findViewById(R.id.my_location);
-        getSupportActionBar().hide();
+        camera_btn = findViewById(R.id.camera);
         mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
 
@@ -43,13 +44,20 @@ public class MainActivity extends AppCompatActivity {
 
         permissionLocation();
 
-        /*
-        버튼 누르면 내 위치로 이동
-        */
+        //버튼 누르면 내 위치로 이동
         my_location_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 permissionLocation();
+            }
+        });
+
+        //버튼 누르면 카메라로 이동
+        camera_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),CameraActivity.class);
+                startActivity(intent);
             }
         });
     }

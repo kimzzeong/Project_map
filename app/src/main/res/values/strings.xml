@@ -2,4 +2,6 @@
     <string name="app_name">WeMap</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_main">Map</string>
+    <string name="request_permission">This sample needs camera permission.</string>
+    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
 </resources>

@@ -14,7 +14,7 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
 
-        getSupportActionBar().hide(); // 액션바 가리기
+        //getSupportActionBar().hide(); // 액션바 가리기
 
         new Handler().postDelayed(new Runnable() {
             @Override
