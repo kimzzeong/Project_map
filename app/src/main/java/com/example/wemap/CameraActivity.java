@@ -30,7 +30,7 @@ public class CameraActivity extends AppCompatActivity {
             Log.e("로그 ", "캡쳐");
 
             Image mImage = reader.acquireNextImage();
-            File mFile = new File(getExternalFilesDir(null), "profileimage.jpg");
+            File mFile = new File(getExternalFilesDir(null), "image.jpg");
 
             ByteBuffer buffer = mImage.getPlanes()[0].getBuffer();
             byte[] bytes = new byte[buffer.remaining()];
